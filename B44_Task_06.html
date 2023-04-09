@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: deeppink;
+            color: whitesmoke;
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color:blue ;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm" action="/submit" method="post">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login">
+            <p id="error-msg" class="error"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var firstName = document.getElementById("firstName").value;
+            var middleName = document.getElementById("middleName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Perform validation or other actions with the extracted data
+            if (email === "" || password === "") {
+                document.getElementById("error-msg").textContent = "Please fill in all fields.";
+            } else {
+                document.getElementById("error-msg").textContent = "";
+                console.log("First Name: " + firstName);
+                console.log("Middle Name: " + middleName);
+                console.log("Last Name: " + lastName);
+                console.log("Email: " + email);
+                console.log("Password: " + password);
+                // You can perform further actions with the extracted data here
+            }
+        });
+    </script>
+</body>
+</html>
