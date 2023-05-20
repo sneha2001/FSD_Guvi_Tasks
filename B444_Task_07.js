@@ -1,4 +1,5 @@
 GUVI: Zen Class — Part 1: Find the culprits and nail them — debugging javascript
+
 1.The error in the provided code is a syntax error in the alert() function call. 
 The double quotation marks used around the string "I’m JavaScript!’ are not proper. 
 The closing single quotation mark is incorrect; it should be a closing double quotation mark instead.
@@ -376,6 +377,57 @@ With this modification, when fix.html is loaded in a web browser and the script.
 Each even number will be printed on a separate line.
 
 18. Change the code to print all the gifts
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < gifts.length; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+This code uses the gifts.length property to determine the number of elements in the gifts array and iterate through each gift.
+The console.log() statement uses template literals (denoted by backticks) to print the current gift in the loop. 
+The ${gifts[i]} expression inside the template literal is used to access the value of the current gift at index i.
+
+19. Fix the code to disarm the bomb.
+
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if (countdown === 0) {
+    console.log("Bomb disarmed!");
+    break; // Add a break statement to exit the loop after disarming the bomb
+  }
+}
+
+In the updated code, the console.log() statement inside the if condition is changed to print "Bomb disarmed!" instead of "Bomb triggered" to indicate that the bomb has been successfully disarmed.
+Additionally, a break statement is added to exit the loop once the bomb is disarmed, preventing further iterations of the loop.
+
+20. Whats the msg printed and why?
+ 
+ The message printed in the console would be "hi".
+
+In the given code, there are two variables: lemein and lemeout. lemein is assigned the string value "0", while lemeout is assigned the numerical value 0.
+
+In the first if statement, if (lemein), the condition is checking the truthiness of the value stored in lemein. 
+In JavaScript, non-empty strings are considered truthy values. Since "0" is a non-empty string, the condition evaluates to true. As a result, the statement inside the if block is executed, which appends the string "hi" to the msg variable.
+
+In the second if statement, if (lemeout), the condition is checking the truthiness of the value stored in lemeout.
+In JavaScript, the number 0 is considered falsy. Therefore, the condition evaluates to false, and the statement inside the if block is not executed.
+
+After evaluating both if statements, the value of msg would be "hi", and that is what will be printed in the console when console.log(msg) is executed.
+
+21. Whats the msg printed and why? Guess you answer before running it.
+
+The message printed in the console would be "hi".
+
+In the given code, the value of lemein is "0", which is a non-empty string. Therefore, the condition if (lemein) evaluates to true, and the code inside the corresponding if block is executed.
+It appends the string "hi" to the msg variable.
+
+On the other hand, the value of lemeout is 0, which is a falsy value in JavaScript.
+Therefore, the condition if (lemeout) evaluates to false, and the code inside the corresponding if block is not executed.
+
+As a result, the value of msg remains as "hi", and that is what will be printed in the console when console.log(msg) is executed.
+
+
+
 
 
 
